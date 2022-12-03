@@ -16,5 +16,6 @@ In the second phase of the project, the beta design will be evaluated at the Duk
 
 **III: Task Log**
 | Task | Date |
-| Familiarize with MorphoCut image processing library | 12/3-12/9 |
+| Intro to MorphoCut image processing library | 12/3-12/9 |
 | Join Planktoscope Slack and get access to sample data | 12/3 |
+| Research pipelines/node class within MorphoCut | 12/7-12/8 |
