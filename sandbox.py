@@ -2,6 +2,7 @@ from typing import Any, List
 import numpy as np
 import pandas as pd
 from skimage import data, io
+from skimage.util import img_as_float
 from matplotlib import pyplot as plt
 import PIL
 import scipy.ndimage as ndi
@@ -33,9 +34,11 @@ from morphocut import image
 #         img = self.read_img_orig()
 #         return img[::2, ::2]
 
-file1 = io.imread("imgs/Ff2imKpXkAAwwg1.jpeg")
-io.imshow(file1)
+image = io.imread("imgs/Ff2imKpXkAAwwg1.jpeg")
+image = image[:, :, ::-1]
+# image = img_as_float(image)
+io.imshow(image)
 plt.show()
-print(file1)
+# print(image)
 
 
