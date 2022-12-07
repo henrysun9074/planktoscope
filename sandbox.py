@@ -1,7 +1,7 @@
 from typing import Any, List
 import numpy as np
 import pandas as pd
-from skimage import data, io
+import skimage.io, skimage.data
 from skimage.util import img_as_float
 from matplotlib import pyplot as plt
 import PIL
@@ -34,10 +34,10 @@ from morphocut import image
 #         img = self.read_img_orig()
 #         return img[::2, ::2]
 
-image = io.imread("imgs/Ff2imKpXkAAwwg1.jpeg")
+image = skimage.io.imread("imgs/Ff2imKpXkAAwwg1.jpeg")
 image = image[:, :, ::-1]
 # image = img_as_float(image)
-io.imshow(image)
+skimage.io.imshow(image)
 plt.show()
 # print(image)
 
