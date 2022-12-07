@@ -7,6 +7,7 @@ from matplotlib import pyplot as plt
 import PIL
 import scipy.ndimage as ndi
 from morphocut import image
+import morphocut.core
 
 # Modify for future use
 
@@ -34,11 +35,22 @@ from morphocut import image
 #         img = self.read_img_orig()
 #         return img[::2, ::2]
 
-image = skimage.io.imread("imgs/Ff2imKpXkAAwwg1.jpeg")
-image = image[:, :, ::-1]
-# image = img_as_float(image)
-skimage.io.imshow(image)
+
+
+# img = skimage.io.imread("imgs/Ff2imKpXkAAwwg1.jpeg")
+img = image.ImageReader("imgs/Ff2imKpXkAAwwg1.jpeg")
+# how to use pipeline? -> can use skimage instead? try 12/8
+
+print(image.ImageStats(img))
+image2 = image.ExtractROI(img)
+# morphocut.core.Call(ExtractROI, image)
+skimage.io.imshow(image2)
 plt.show()
+
+# image = image[:, :, ::-1]
+# # image = img_as_float(image)
+# skimage.io.imshow(image)
+# plt.show()
 # print(image)
 
 
