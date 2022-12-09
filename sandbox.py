@@ -44,6 +44,7 @@ from morphocut.stream import Enumerate, Unpack
 #         img = self.read_img_orig()
 #         return img[::2, ::2]
 
+# TODO: look for data in papers/slack (photos)
 with Pipeline() as pipeline:
     img = ImageReader("imgs/Ff2imKpXkAAwwg1.jpeg")
     image.RGB2Gray(img)

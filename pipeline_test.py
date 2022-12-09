@@ -9,9 +9,8 @@ from morphocut.parallel import ParallelPipeline
 from morphocut.str import Format
 from morphocut.stream import Enumerate, Unpack
 
-
-# First, a Pipeline is defined that contains all operations
-# that should be carried out on the objects of the stream.
+# TODO: create working pipeline
+# First, a Pipeline is defined that contains all operations that should be carried out on the objects of the stream.
 with Pipeline() as p:
     # Corresponds to `for base_path in ["/path/a", "/path/b", "/path/c"]:`
     base_path = Unpack(["/path/a", "/path/b", "/path/c"])
@@ -21,7 +20,7 @@ with Pipeline() as p:
 
     # Call calls regular Python functions.
     # Here, a subpath is appended to base_path.
-    pattern = Call(os.path.join, base_path, "/Users/henrysun_1/Desktop/Personal/HenMeme")
+    pattern = Call(os.path.join, base_path, "subpath")
 
     # Corresponds to `for path in glob(pattern):`
     path = Glob(pattern)
@@ -61,6 +60,5 @@ with Pipeline() as p:
     EcotaxaWriter("archive.zip", (roi_name, roi_image), meta)
 
 # After the Pipeline was defined, it can be executed.
-# A stream is created and transformed by the operations
-# defined in the Pipeline.
+# A stream is created and transformed by the operations defined in the Pipeline.
 p.run()
