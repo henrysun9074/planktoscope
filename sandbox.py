@@ -6,8 +6,17 @@ from skimage.util import img_as_float
 from matplotlib import pyplot as plt
 import PIL
 import scipy.ndimage as ndi
+
+import os.path
 from morphocut import image
-import morphocut.core
+from morphocut import Call, Pipeline
+from morphocut.contrib.ecotaxa import EcotaxaWriter
+from morphocut.contrib.zooprocess import CalculateZooProcessFeatures
+from morphocut.file import Glob
+from morphocut.image import FindRegions, ImageReader
+from morphocut.parallel import ParallelPipeline
+from morphocut.str import Format
+from morphocut.stream import Enumerate, Unpack
 
 # Modify for future use
 
@@ -35,22 +44,24 @@ import morphocut.core
 #         img = self.read_img_orig()
 #         return img[::2, ::2]
 
+with Pipeline() as pipeline:
+    img = ImageReader("imgs/Ff2imKpXkAAwwg1.jpeg")
+    image.RGB2Gray(img)
+pipeline.run()
+# skimage.io.imshow(img)
+# plt.show
 
-
-# img = skimage.io.imread("imgs/Ff2imKpXkAAwwg1.jpeg")
-img = image.ImageReader("imgs/Ff2imKpXkAAwwg1.jpeg")
-# how to use pipeline? -> can use skimage instead? try 12/8
-
-print(image.ImageStats(img))
-image2 = image.ExtractROI(img)
-# morphocut.core.Call(ExtractROI, image)
-skimage.io.imshow(image2)
-plt.show()
-
-# image = image[:, :, ::-1]
-# # image = img_as_float(image)
-# skimage.io.imshow(image)
+img = skimage.io.imread("imgs/Ff2imKpXkAAwwg1.jpeg")
+# print(image.ImageStats(img))
+# image2 = image.ExtractROI(img)
+# # morphocut.core.Call(ExtractROI, image)
+# skimage.io.imshow(image2)
 # plt.show()
-# print(image)
+
+image = img[:, :, ::-1]
+# image = img_as_float(image)
+skimage.io.imshow(image)
+plt.show()
+print(image)
 
 
