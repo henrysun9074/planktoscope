@@ -1,5 +1,5 @@
 # planktoscope
-Image processing pipeline for Planktoscope camera photos  
+  
 **I: Project Background**  
 *Taken from https://bassconnections.duke.edu/project-teams/pilot-planktoscope-climate-change-research-2022-2023*  
 
@@ -21,3 +21,4 @@ In the second phase of the project, the beta design will be evaluated at the Duk
 | Join Planktoscope Slack and get access to sample data | 12/3 |
 | Research pipelines/node class within MorphoCut | 12/7-12/8 |
 | Import scripts from https://github.com/PlanktoScope/PlanktoScope/tree/master/scripts | 12/18-1/11 | 
+| Read papers about segmentation pipelines/image processing | 12/18-1/11 |
